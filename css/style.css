@@ -4,6 +4,14 @@ html, body {
   overflow-x: hidden;
   background-color: #ffffff;
   font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Add this if you're using a fixed header */
+body {
+  padding-top: 100px; /* Adjust to match your header height */
 }
 
 /* Location Contact Bar */
@@ -38,14 +46,17 @@ html, body {
 
 /* Header */
 .header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 10; /* stays above background */
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Center nav links */
-  padding: 10px 20px;
-  gap: 20px;
-  position: relative;
-  z-index: 2; /* Ensure it's above background */
+  padding: 0px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
@@ -80,7 +91,9 @@ html, body {
   display: inline-block;
   transition: background-color 0.3s ease;
 }
-
+#free-trial {
+  scroll-margin-top: 90px; /* Adjust based on your header height */
+}
 .trial-link:hover {
   background-color: #005fa3;
 }
@@ -111,22 +124,23 @@ html, body {
 /* Background Section */
 .background-section {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   width: 100%;
-  max-width: 100vw; /* Prevent overflow */
-  height: 700px;
+  min-height: 750px;
+  /* margin-top: 40px; <-- remove this line */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem 1rem; /* top, sides, bottom */
+  box-sizing: border-box;
   background-image: url('https://fortemusicbrisbane.au/wp-content/uploads/2024/12/topbnr-bg-dtp2.jpg');
-  background-position: right top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #00a770;
-  overflow: hidden;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  box-sizing: border-box;
   z-index: 1;
+  overflow: hidden;
+  gap: 2rem;
 }
 
 
@@ -141,10 +155,7 @@ html, body {
   z-index: 1;
 }
 .bottom-left-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  z-index: 2; /* Above overlay */
+  z-index: 2;
   color: white;
   font-size: 1.2rem;
   font-family: sans-serif;
@@ -152,20 +163,17 @@ html, body {
   line-height: 1.4;
 }
 
-
 .form-container {
-  position: relative;
   z-index: 2;
-  width: 320px;                  /* Wider form */
-  max-width: 95vw;               /* Responsive fallback */
+  width: 100%;
+  max-width: 320px;
   background: rgba(255, 255, 255, 0.95);
   padding: 1.5rem;
-  border-radius: 12px;           /* More rounded corners */
+  border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   font-size: 0.85rem;
+  overflow: auto; /* allows internal scroll if content grows */
 }
-
-
 .form-container h2 {
   margin-bottom: 0.75rem;        /* Less vertical space */
   font-size: 1.3rem;
@@ -301,64 +309,86 @@ html, body {
 
 
   /* learn music section */
-  .learn-music-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 3rem 2rem;
-  background-color: white;
+.learn-music-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 0; /* Removed excess space above */
+  padding: 4rem 2rem 2rem; /* More top padding for breathing room */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly larger cards */
+  gap: 4rem;
+  background-color: #f9f9f9;
 }
 
+/* Card Styling */
 .card {
-  width: 220px;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 16px; /* Rounded edges */
+  width: 100%; /* Full width inside grid */
   color: white;
-  font-family: sans-serif;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Deeper shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering if height is set */
+  flex-direction: column;  /* stack content vertically */
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(3deg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Content */
+.card h2, .card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.center-stack {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  perspective: 1000px;
-}
-.card:hover {
-  transform: translateY(-10px) rotateX(3deg); /* Lift and tilt */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Stronger shadow on hover */
+  margin-top: 0.5em; /* optional spacing from heading */
 }
 
-
-
-.card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+.center-stack span {
+  display: block;
+  margin: 0.2em 0; 
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 1.2rem;
+  text-align: center;
 }
 
+.card .age-range {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Button */
 .card button {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem; /* optional spacing from other content */
 }
-
 
 .card button:hover {
   background-color: rgba(255, 255, 255, 0.4);
-  transform: scale(1.05); /* Slight pop on hover */
+  transform: scale(1.05);
 }
-
 
 /* Color classes */
 .orange   { background-color: #f47224; }

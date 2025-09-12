@@ -6,12 +6,12 @@
   <title>Forte School of Music Brisbane</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-  
 </head>
 <body>
 
   <!-- Location Contact Bar -->
- <div class="location-bar">
+  <!--
+  <div class="location-bar">
     <div class="location-container">
       <nav>
         <div class="location-links">
@@ -31,12 +31,15 @@
       </nav>
     </div>
   </div>
+  -->
 
   <!-- Header with Hamburger Nav -->
+  <!-- Fixed Header -->
   <header class="header-wrapper">
     <div class="logo">
-     <img src="assets/hdr-logo.png" alt="Forte School of Music Logo" />
-   </div>
+      <img src="assets/hdr-logo.png" alt="Forte School of Music Logo" />
+    </div>
+
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
     <label for="nav-toggle" class="nav-toggle-label">
       <span></span>
@@ -52,184 +55,205 @@
       <a href="#locations">Locations</a>
       <a class="trial-link" href="#free-trial">Free trial – Book now!</a>
     </nav>
-  
   </header>
 
-  <!-- Background Section -->
-  <div class="background-section">
+  <section class="background-section">
     <div class="gradient-overlay"></div>
+
     <div class="bottom-left-text">
-    <h1> Start your journey...</h1>
-    <h2>The home of fun, engaging, student-centered music lessons</h2>
-  </div>
-  <div class="form-container">
-    <h2>Free trial lesson - Book today!!</h2>
-    <form id="musicform">
-       <!-- Name -->
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="parentLastName">Your Last Name</label>
-      <input type="text" id="parentLastName" name="parentLastName" required>
-  
+      <h1>Start your journey...</h1>
+      <h2>The home of fun, engaging, student-centered music lessons</h2>
+    </div>
 
-      <!-- Email -->
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+    <div class="form-container" id="free-trial">
+      <form id="musicform">
+        <h2>Free trial lesson – Book today!!</h2>
 
-      <!-- Phone -->
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" required>
+        <!-- Lesson For -->
+        <label for="lessonFor">Who are the lessons for?</label>
+        <select id="lessonFor" name="lessonFor" required>
+          <option value="">Select</option>
+          <option value="myself">Myself / Adult</option>
+          <option value="child">Child</option>
+        </select>
 
-     <!-- Location -->
-      <label for="location">Preferred Location</label>
-     <select id="location" name="location" required>
-       <option value="">Select a location</option>
-       <option value="stafford">Stafford</option>
-       <option value="coorparoo">Coorparoo</option>
-       <option value="toowong">Toowong</option>
-     </select>
+        <!-- Parent Info -->
+        <div id="parentFields">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name">
+          <label for="parentLastName">Your Last Name</label>
+          <input type="text" id="parentLastName" name="parentLastName">
+        </div>
 
-  <!-- Who are the lessons for -->
-  <!-- <label for="lessonFor">Who are the lessons for?</label>
-  <select id="lessonFor" name="lessonFor" required>
-    <option value="">Select</option>
-    <option value="myself">Myself / Adult</option>
-    <option value="child">Child</option>
-  </select> -->
+        <!-- Shared Info -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
 
-           <!-- Student Name -->
-     <label for="studentName">Student Name</label>
-     <input type="text" id="studentName" name="studentName" required>
-     <label for="studentLastName">Student Last Name</label>
-     <input type="text" id="studentLastName" name="studentLastName" required>
-  <!-- Course / Instrument -->
-     <label for="instrument">Choose Course / Instrument</label>
-     <select id="instrument" name="instrument" required>
-    <option value="">Select</option>
-    <option value="guitar">Guitar</option>
-    <option value="drums">Drums</option>
-    <option value="keyboard">Keyboard</option>
-    <option value="vocals">Vocals</option>
-    <option value="music-theory">Music Theory</option>
-    <option value="early-childhood">Early Childhood Music</option>
-  </select>
+        <!-- Location -->
+        <label for="location">Preferred Location</label>
+        <select id="location" name="location" required>
+          <option value="">Select a location</option>
+          <option value="stafford">Stafford</option>
+          <option value="coorparoo">Coorparoo</option>
+          <option value="toowong">Toowong</option>
+        </select>
 
-  <!-- Submit -->
-       <button type="submit">Submit</button>
-   </form>
+        <!-- Student Info -->
+        <div id="studentFields">
+          <label for="studentName">Student Name</label>
+          <input type="text" id="studentName" name="studentName" required>
+          <label for="studentLastName">Student Last Name</label>
+          <input type="text" id="studentLastName" name="studentLastName" required>
+        </div>
 
+        <!-- Instrument -->
+        <label for="instrument">Choose Course / Instrument</label>
+        <select id="instrument" name="instrument" required>
+          <option value="">Select</option>
+          <option value="guitar">Guitar</option>
+          <option value="drums">Drums</option>
+          <option value="keyboard">Keyboard</option>
+          <option value="vocals">Vocals</option>
+          <option value="music-theory">Music Theory</option>
+          <option value="early-childhood">Early Childhood Music</option>
+        </select>
 
-  </div>
-  </div>
+        <!-- Submit -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Learn Music Section -->
   <div class="learn-music-section">
-  <div class="card orange"> <h2>Jungle music</h2> <span>Babies</span>
-<span class="age-range">6 months - 3.5 yrs</span>
-  <p>Jungle Music is Forte’s award winning early childhood music programme. Children are given the opportunity to experience a wide range of musical activities in a nurturing, safe environment.</p> <button>Learn More</button> </div>
-  <div class="card blue"> <h3>Blue</h3> <p>Master the art of piano playing.</p> <button>Learn More</button> </div>
-  <div class="card purple"> <h3>Purple</h3> <p>Discover vocal techniques and harmony.</p> <button>Learn More</button> </div>
-  <div class="card green"> <h3>Green</h3> <p>Learn guitar from chords to solos.</p> <button>Learn More</button> </div>
-  <div class="card red"> <h3>Red</h3> <p>Unleash your creativity with songwriting.</p> <button>Learn More</button> </div>
-  <div class="card yellow"> <h3>Yellow</h3> <p>Understand music theory fundamentals.</p> <button>Learn More</button> </div>
-  <div class="card lightblue"> <h3>Light Blue</h3> <p>Get started with digital music production.</p> <button>Learn More</button> </div>
-</div>
+    <div class="card orange">
+      <h2>Jungle music</h2>
+      <div class="center-stack">
+        <span>Babies</span>
+        <span class="age-range">6 months - 3.5 yrs</span>
+      </div>
+      <p>Jungle Music is Forte’s award winning early childhood music programme. Children are given the opportunity to experience a wide range of musical activities in a nurturing, safe environment.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card blue">
+      <h3>Blue</h3>
+      <p>Master the art of piano playing.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card purple">
+      <h3>Purple</h3>
+      <p>Discover vocal techniques and harmony.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card green">
+      <h3>Green</h3>
+      <p>Learn guitar from chords to solos.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card red">
+      <h3>Red</h3>
+      <p>Unleash your creativity with songwriting.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card yellow">
+      <h3>Yellow</h3>
+      <p>Understand music theory fundamentals.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card lightblue">
+      <h3>Light Blue</h3>
+      <p>Get started with digital music production.</p>
+      <button>Learn More</button>
+    </div>
+  </div>
+
   <!-- About Section -->
-
   <div class="about-section" role="region" aria-labelledby="about-title">
-  <h1 id="about-title">Grow the young musician inside your child</h1>
+    <h1 id="about-title">Grow the young musician inside your child</h1>
+    <p>
+      At Forte School of Music, we take a holistic approach to music education. Our passionate teachers nurture each individual’s abilities while fostering a love for music that lasts a lifetime.
+    </p>
+    <p>
+      Proudly teaching in Brisbane for over 30 years, we deliver more than 30,000 music lessons every year to students from 6 months old to 90 years and beyond.
+    </p>
+    <p>
+      We offer courses for every age group—from babies through to adults. You’ll learn in modern, bright, clean, air‑conditioned studios with teachers selected for their energy, enthusiasm, and ability to show you the how‑to with clarity and care.
+    </p>
+    <h2>Music skills your child will learn</h2>
+    <ul class="skills-list">
+      <li><strong>Playing piano</strong></li>
+      <li><strong>Performing in concerts</strong></li>
+      <li><strong>Playing by memory</strong></li>
+      <li><strong>Reading music</strong></li>
+      <li><strong>Playing by ear</strong></li>
+      <li><strong>Understanding theory</strong></li>
+      <li><strong>Keyboard harmony</strong></li>
+      <li><strong>Improvising and composing</strong></li>
+    </ul>
+    <p>
+      Imagine giving your child the gift that learning music brings. At Forte, confidence is built one step at a time through regular small class concerts every few weeks—structured moments to celebrate mastery and growth.
+    </p>
+    <p class="about-cta">
+      Ready to begin? Explore courses for your age group and book a trial lesson today.
+    </p>
+    <a class="trial-link" href="#free-trial">Free trial – Book now!</a>
+    <a
+      href="https://www.youtube.com/embed/t_HyUI2X0kg?autoplay=1"
+      class="full-link"
+      data-fancybox
+      data-type="iframe"
+    >
+      🎬 Watch a preview of our music classes
+    </a>
+  </div>
 
-  <p>
-    At Forte School of Music, we take a holistic approach to music education. Our passionate teachers nurture each individual’s abilities while fostering a love for music that lasts a lifetime.
-  </p>
-
-  <p>
-    Proudly teaching in Brisbane for over 30 years, we deliver more than 30,000 music lessons every year to students from 6 months old to 90 years and beyond.
-  </p>
-
-  <p>
-    We offer courses for every age group—from babies through to adults. You’ll learn in modern, bright, clean, air‑conditioned studios with teachers selected for their energy, enthusiasm, and ability to show you the how‑to with clarity and care.
-  </p>
-
-  <h2>Music skills your child will learn</h2>
-  <ul class="skills-list">
-    <li><strong>Playing piano</strong> </li>
-    <li><strong>Performing in concerts</strong> </li>
-    <li><strong>Playing by memory</strong> </li>
-    <li><strong>Reading music</strong> </li>
-    <li><strong>Playing by ear</strong> </li>
-    <li><strong>Understanding theory</strong></li>
-    <li><strong>Keyboard harmony</strong> </li>
-    <li><strong>Improvising and composing</strong> </li>
-  </ul>
-
-  <p>
-    Imagine giving your child the gift that learning music brings. At Forte, confidence is built one step at a time through regular small class concerts every few weeks—structured moments to celebrate mastery and growth.
-  </p>
-
-  <p class="about-cta">
-    Ready to begin? Explore courses for your age group and book a trial lesson today.
-  </p>
-  <a class="trial-link" href="#free-trial">Free trial – Book now!</a>
-<a
-  href="https://www.youtube.com/embed/t_HyUI2X0kg?autoplay=1"
-  class="full-link"
-  data-fancybox
-  data-type="iframe"
->
-  🎬 Watch a preview of our music classes
-</a>
-</div>
-
-<h1 id="reviews" style="text-align:center; margin-top:2rem; text-decoration: underline; text-decoration-color: #f47224;">
-  Reviews
-</h1>
-
+  <h1 id="reviews" style="text-align:center; margin-top:2rem; text-decoration: underline; text-decoration-color: #f47224;">
+    Reviews
+  </h1>
 
   <!-- Reviews Slideshow Container -->
-<div class="slideshow-container">
+  <div class="slideshow-container">
+    <!-- Reviews Section -->
+    <!-- Full-width slides with number and paragraph text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <p style="width:100%">
+        "I have been taking my daughter to classes at Forte for 6 months now and she really loves it. As a musician myself, I can see how well-developed the course material is and how the basics of music theory and practice are expertly tailored to help children learn in fun and supportive ways which are also really creative."
+      </p>
+      <div class="text">Leah Fehres</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <p style="width:100%">
+        "My children have been attending Forte for over 3 years now and they love every lesson. From group lessons in the beginning to individual lessons now. The concerts are great and really give the children confidence to keep going."
+      </p>
+      <div class="text">Jennifer Crosbie</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <p style="width:100%">
+        "Forte School of music is a place where children are welcome to grow and discover the joy of music at their own pace and with incredible levels of support and encouragement"
+      </p>
+      <div class="text">Ilana Mendels</div>
+    </div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
 
-  <!-- Reviews Section -->
-  <!-- Full-width slides with number and paragraph text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <p style="width:100%">"I have been taking my daughter to classes at Forte for 6 months now and she really loves it. As a musician myself, I can see how well-developed the course material is and how the basics of music theory and practice are expertly tailored to help children learn in fun and supportive ways which are also really creative."
-</p>
-  <div class="text">Leah Fehres</div>
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <p style="width:100%">"My children have been attending Forte for over 3 years now and they love every lesson. From group lessons in the beginning to individual lessons now. The concerts are great and really give the children confidence to keep going."
-
-</p>
-    <div class="text">Jennifer Crosbie</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <p style="width:100%">"Forte School of music is a place where children are welcome to grow and discover the joy of music at their own pace and with incredible levels of support and encouragement"
-
-</p>
-    <div class="text">Ilana Mendels</div>
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-
-<script src="js/opus1Handler.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-<script src="js/cardToggle.js"></script>
+  <script src="js/opus1Handler.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/backgroundImage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script src="js/cardToggle.js"></script>
 </body>
-</html>
