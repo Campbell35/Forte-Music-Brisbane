@@ -1,0 +1,141 @@
+/* Header */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 10; /* stays above background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto; /* centers the block itself */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.trial-link {
+  background-color: #0077cc;
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+#free-trial {
+  scroll-margin-top: 90px; /* Adjust based on your header height */
+}
+.trial-link:hover {
+  background-color: #005fa3;
+}
+
+/* Hamburger Toggle */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 3;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.nav-toggle-label span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  display: block;
+}
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
+
+
+/* Background Section */
+.background-section {
+  position: relative;
+  width: 100%;
+  min-height: 750px;
+  /* margin-top: 40px; <-- remove this line */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem 1rem; /* top, sides, bottom */
+  box-sizing: border-box;
+  /* background-image: url('https://fortemusicbrisbane.au/wp-content/uploads/2024/12/topbnr-bg-dtp2.jpg'); */
+ background-image: url('../assets/pexels-mart-production-8471817.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #00a770;
+  z-index: 1;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(15deg, rgba(0,167,112,0.97) 30%, rgba(0,167,112,0) 53%);
+  pointer-events: none;
+  z-index: 1;
+}
+.bottom-left-text {
+  z-index: 2;
+  color: white;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  max-width: 400px;
+  line-height: 1.4;
+}

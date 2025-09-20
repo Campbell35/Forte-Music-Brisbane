@@ -42,7 +42,10 @@ form.addEventListener("submit", function (e) {
     },
     body: JSON.stringify(payload)
   })
-  .then(() => console.log("Webhook request sent."))
-  .catch(err => console.error("Fetch error:", err));
-});
+   .then(() => {
+      console.log("Webhook request sent.");
+      location.reload(); // 🔄 Refresh the page after submission
+    })
+    .catch(err => console.error("Fetch error:", err));
+  });
 });

@@ -1,18 +1,3 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background-color: #ffffff;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-/* Add this if you're using a fixed header */
-body {
-  padding-top: 100px; /* Adjust to match your header height */
-}
 
 /* Location Contact Bar */
 .location-bar {
@@ -44,124 +29,7 @@ body {
   color: #0077cc;
 }
 
-/* Header */
-.header-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 10; /* stays above background */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
 
-.logo img {
-  max-width: 200px;
-  height: auto;
-}
-
-/* Nav Links */
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 auto; /* centers the block itself */
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.trial-link {
-  background-color: #0077cc;
-  color: #ffffff !important;
-  padding: 8px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-#free-trial {
-  scroll-margin-top: 90px; /* Adjust based on your header height */
-}
-.trial-link:hover {
-  background-color: #005fa3;
-}
-
-/* Hamburger Toggle */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 3;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.nav-toggle-label span {
-  width: 25px;
-  height: 3px;
-  background: #000;
-  display: block;
-}
-
-/* Background Section */
-.background-section {
-  position: relative;
-  width: 100%;
-  min-height: 750px;
-  /* margin-top: 40px; <-- remove this line */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 2rem 1rem; /* top, sides, bottom */
-  box-sizing: border-box;
-  background-image: url('https://fortemusicbrisbane.au/wp-content/uploads/2024/12/topbnr-bg-dtp2.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #00a770;
-  z-index: 1;
-  overflow: hidden;
-  gap: 2rem;
-}
-
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(15deg, rgba(0,167,112,0.97) 30%, rgba(0,167,112,0) 53%);
-  pointer-events: none;
-  z-index: 1;
-}
-.bottom-left-text {
-  z-index: 2;
-  color: white;
-  font-size: 1.2rem;
-  font-family: sans-serif;
-  max-width: 400px;
-  line-height: 1.4;
-}
 
 .form-container {
   z-index: 2;
@@ -303,17 +171,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-  }
-}
 
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: 1fr; /* 1 column on phones */
-  }
-}
 
 
 
@@ -621,41 +479,28 @@ body {
   to { opacity: 1; }
 }
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-    background-color: #0077cc; /* Blue background */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 80px 20px 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 2;
-  }
 
-  .nav-links a {
-    color: #ffffff; /* White text */
-  }
-
-  .nav-toggle:checked + .nav-toggle-label + .nav-links {
-    display: flex;
+  .logo img {
+    max-width: 160px;
+    height: auto;
   }
 
   .nav-toggle-label {
     display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
   }
 
   .header-wrapper {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 10px 20px;
+    text-align: left;
   }
 
   .location-links {
     flex-direction: column;
     gap: 12px;
   }
-}
+
