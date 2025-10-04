@@ -22,3 +22,24 @@
   // Initial state
   toggleFields();
 
+const lessonFor2 = document.getElementById('lessonFor2');
+const parentFields2 = document.getElementById('parentFields2');
+const studentFields2 = document.getElementById('studentFields2');
+
+function toggleFields2() {
+  const value = lessonFor2.value;
+  if (value === 'myself') {
+    parentFields2.style.display = 'none';
+    studentFields2.style.display = 'block';
+  } else if (value === 'child') {
+    parentFields2.style.display = 'block';
+    studentFields2.style.display = 'block';
+  } else {
+    parentFields2.style.display = 'none';
+    studentFields2.style.display = 'none';
+  }
+}
+
+lessonFor2.addEventListener('change', toggleFields2);
+
+

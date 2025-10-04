@@ -1,20 +1,53 @@
-@media (max-width: 768px) {
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+/* --- 1024px --- */
+@media screen and (max-width: 1024px) {
+  .background-section {
+    padding: 2.5rem 1.5rem 1rem;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center center;
+  }
+  .bottom-left-text {
+    font-size: 1.1rem;
+    max-width: 360px;
+  }
+  .location-section {
+    justify-content: center;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .location-box {
+    flex: 0 0 45%;
+    max-width: 100%;
+  }
+  .mySlides p,
+  .text {
+    font-size: 20px;
+  }
+  .mySlides p {
+    height: 260px;
+    padding: 16px;
+  }
+  .text {
+    padding: 6px 10px;
+  }
+  .prev, .next {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .slideshow-container {
+    max-width: 90%;
+    padding: 0 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: 1fr; /* 1 column on phones */
-  }
-}
+/* --- 768px --- */
 @media screen and (max-width: 768px) {
+  /* Navigation */
   .nav-links {
     display: none;
     flex-direction: column;
     gap: 16px;
-    background-color: #0077cc; /* Blue background */
+    background-color: #0077cc;
     position: absolute;
     top: 0;
     left: 0;
@@ -23,34 +56,42 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     z-index: 2;
   }
-
   .nav-links a {
-    color: #ffffff; /* White text */
+    color: #ffffff;
   }
-
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex;
   }
   .logo {
     flex-shrink: 0;
   }
-}
-@media screen and (max-width: 1024px) {
+
+  /* Skills */
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Background */
   .background-section {
-    padding: 2.5rem 1.5rem 1rem;
-    min-height: 600px;
-    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    min-height: 450px;
     background-position: center center;
   }
-
-  .bottom-left-text {
-    font-size: 1.1rem;
-    max-width: 360px;
+  .gradient-overlay {
+    background: linear-gradient(25deg, rgba(0,167,112,0.95) 20%, rgba(0,167,112,0) 40%);
   }
-}
 
-@media screen and (max-width: 768px) {
-  .background-section {
+  .purple .gradient-overlay {
+    background: linear-gradient(25deg, rgba(106,13,173,0.95) 20%, rgba(106,13,173,0) 40%);
+  }
+  .bottom-left-text {
+    font-size: 1rem;
+    max-width: 320px;
+  }
+  .purple .background-section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -59,212 +100,120 @@
     background-size: cover;
     background-position: center center;
   }
-
-  .bottom-left-text {
+  .purple .bottom-left-text {
     font-size: 1rem;
     max-width: 320px;
   }
-}
 
-@media screen and (max-width: 480px) {
-  .background-section {
-    padding: 1.5rem 1rem;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center center;
+  /* Location */
+  .location-box {
+    flex: 0 0 100%;
+    margin-bottom: 2rem;
+  }
+  .location-icon {
+    width: 64px;
   }
 
-  .bottom-left-text {
-    font-size: 0.95rem;
-    max-width: 280px;
+  /* Slideshow */
+  .mySlides p {
+    font-size: 18px;
+    height: 220px;
+    padding: 14px;
+  }
+  .text {
+    font-size: 18px;
+    padding: 6px 10px;
+    bottom: 6px;
+  }
+  .mySlides:nth-of-type(1) .text {
+    padding-top: 20px !important;
+  }
+  .numbertext {
+    font-size: 10px;
+  }
+  .prev, .next {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .dot {
+    height: 12px;
+    width: 12px;
   }
 }
+
+/* --- 600px --- */
 @media (max-width: 600px) {
   .location-section {
     flex-direction: column;
     align-items: center;
   }
-
   .location-box {
     flex: 0 0 80%;
     max-width: 100%;
   }
 }
-/* Responsive tweaks */
-@media screen and (max-width: 1024px) {
-  .location-section {
-    justify-content: center;
-    gap: 2rem;
-    padding: 2.5rem 1.5rem;
-  }
 
-  .location-box {
-    flex: 0 0 45%;
-    max-width: 100%;
-  }
-
-  .mySlides p {
-    font-size: 20px;
-    height: 260px;
-    padding: 16px;
-  }
-
-  .text {
-    font-size: 20px;
-  }
-
-  .prev, .next {
-    font-size: 16px;
-    padding: 12px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .location-box {
-    flex: 0 0 100%;
-    margin-bottom: 2rem;
-  }
-
-  .location-icon {
-    width: 64px;
-  }
-
-  .mySlides p {
-    font-size: 18px;
-    height: 220px;
-  }
-
-  .text {
-    font-size: 18px;
-  }
-
-  .numbertext {
-    font-size: 10px;
-  }
-
-  .prev, .next {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-
+/* --- 480px --- */
 @media screen and (max-width: 480px) {
-  .slideshow-container {
-    max-width: 100%;
-    padding: 0 1rem;
+  /* Skills */
+  .skills-list {
+    grid-template-columns: 1fr;
   }
 
-  .mySlides p {
-    font-size: 16px;
-    height: 200px;
-    padding: 12px;
+  /* Background */
+  .background-section {
+    padding: 1.5rem 1rem;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center center;
+  }
+  .bottom-left-text {
+    font-size: 0.95rem;
+    max-width: 280px;
   }
 
-  .text {
-    font-size: 16px;
-    padding: 6px 10px;
-  }
-
+  /* Location */
   .location-section {
     padding: 2rem 1rem;
   }
-
   .location-box {
     padding: 1rem;
   }
-
   .location-label-south,
   .location-label-west,
   .location-label-woolloongabba {
     font-size: 0.95rem;
   }
-
   .location-phone-south,
   .location-phone-west,
   .location-phone-woolloongabba {
     font-size: 0.9rem;
   }
 
-  .dot {
-    height: 12px;
-    width: 12px;
-  }
-}
-/* Responsive slideshow styles */
-@media screen and (max-width: 1024px) {
-  .slideshow-container {
-    max-width: 90%;
-    padding: 0 1rem;
-  }
-
-  .mySlides p {
-    font-size: 20px;
-    height: 260px;
-    padding: 16px;
-  }
-
-  .text {
-    font-size: 20px;
-    padding: 6px 10px;
-  }
-
-  .prev, .next {
-    font-size: 16px;
-    padding: 12px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .mySlides p {
-    font-size: 18px;
-    height: 220px;
-    padding: 14px;
-  }
-
-  .text {
-    font-size: 18px;
-  }
-
-  .numbertext {
-    font-size: 10px;
-  }
-
-  .prev, .next {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .dot {
-    height: 12px;
-    width: 12px;
-  }
-}
-
-@media screen and (max-width: 480px) {
+  /* Slideshow */
   .slideshow-container {
     max-width: 100%;
     padding: 0 0.5rem;
   }
-
   .mySlides p {
     font-size: 16px;
     height: 200px;
     padding: 12px;
   }
-
   .text {
     font-size: 16px;
     padding: 4px 8px;
+    bottom: 4px;
   }
-
+  .mySlides:nth-of-type(1) .text {
+    padding-top: 24px !important;
+  }
   .prev, .next {
     font-size: 12px;
     padding: 8px;
   }
-
   .dot {
     height: 10px;
     width: 10px;
   }
 }
-

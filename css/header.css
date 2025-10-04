@@ -101,7 +101,8 @@
 .background-section {
   position: relative;
   width: 100%;
-  min-height: 750px;
+  min-height: 600px;
+  background-size: contain;
   /* margin-top: 40px; <-- remove this line */
   display: flex;
   flex-wrap: wrap;
@@ -132,10 +133,68 @@
   z-index: 1;
 }
 .bottom-left-text {
-  z-index: 2;
+  font-size: 1.2rem !important;
+  max-width: 400px !important;
+  margin-top: 500px; 
   color: white;
-  font-size: 1.2rem;
   font-family: sans-serif;
-  max-width: 400px;
   line-height: 1.4;
+  z-index: 2;
+}
+.background-section.purple {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem 1rem;
+  box-sizing: border-box;
+  background-image: url('../assets/DSC_1932.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #6a0dad; /* Deep purple base */
+  z-index: 1;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.purple .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(15deg, rgba(106,13,173,0.97) 30%, rgba(106,13,173,0) 53%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.purple .bottom-left-text {
+  font-size: 1.2rem !important;
+  max-width: 600px !important;
+  margin-top: 400px; 
+  color: white;
+  font-family: sans-serif;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px), screen and (max-width: 480px) {
+  .bottom-left-text {
+    font-size: 1.2rem !important;
+    max-width: 400px !important;
+    color: white !important;
+    line-height: 1.4 !important;
+  }
+}
+@media screen and (max-width: 768px), screen and (max-width: 480px) {
+ .purple .bottom-left-text {
+    font-size: 1.2rem !important;
+    max-width: 400px !important;
+    color: white !important;
+    line-height: 1.4 !important;
+  }
 }

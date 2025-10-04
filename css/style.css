@@ -80,6 +80,27 @@
 .form-container button:hover {
   background-color: #005fa3;
 }
+/* Ensure form stays the same on mobile */
+@media screen and (max-width: 768px), screen and (max-width: 480px) {
+  .form-container {
+    font-size: 0.85rem !important;
+    max-width: 320px !important;
+    padding: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+  }
+  .form-container h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .form-container label,
+  .form-container input,
+  .form-container select,
+  .form-container button {
+    font-size: 0.85rem !important;
+  }
+}
   
   /* About Section */
 .about-section {
