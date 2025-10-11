@@ -145,9 +145,15 @@
 .about-section p {
   margin: 0 0 var(--gap);
   color: var(--muted);
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  column-gap: 2.5rem;
+  row-gap: 1.2rem;
 }
+
 
 .skills-list {
   display: grid;
