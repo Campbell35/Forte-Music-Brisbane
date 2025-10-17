@@ -23,29 +23,39 @@
     display: flex;
   }
   .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 8px;
-    background: #fff;
-    padding: 12px 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    border-radius: 12px;
-    z-index: 20;
-    gap: 18px;
-    min-width: 180px;
-    align-items: flex-start;
-  }
-  .nav-links a {
-    font-size: 1.1em;
-    color: #222;
-    padding: 6px 0;
-  }
-  .trial-link {
-    padding: 8px 12px;
-    font-size: 1em;
-  }
+  background-color: #2b6cb0; /* brand blue */
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #e0e0ff; /* soft hover contrast */
+}
+
+.trial-link {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.trial-link:hover {
+  color: #2b6cb0;
+}
+
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex;
   }
@@ -81,7 +91,8 @@
 
 /* --- BACKGROUND SECTION MEDIA QUERIES --- */
 @media screen and (max-width: 1024px) {
-  .background-section {
+  .background-section,
+  .background-section.purple {
     padding: 2.5rem 1.5rem 1rem;
     min-height: 600px;
     background-size: cover;
@@ -89,7 +100,7 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-  .bottom-left-text {
+  .background-section .bottom-left-text {
     font-size: 1.2rem !important;
     max-width: 400px !important;
   }
@@ -102,7 +113,7 @@
 
 @media screen and (max-width: 768px) {
   .background-section,
-  .purple .background-section {
+  .background-section.purple {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -112,14 +123,14 @@
     background-size: cover;
     background-position: center center;
   }
-  .gradient-overlay {
+
+ .background-section .gradient-overlay {
     background: linear-gradient(25deg, rgba(0,167,112,0.95) 20%, rgba(0,167,112,0) 40%);
   }
-  .purple .gradient-overlay {
+  .background-section.purple .gradient-overlay {
     background: linear-gradient(25deg, rgba(106,13,173,0.95) 20%, rgba(106,13,173,0) 40%);
   }
-  .bottom-left-text,
-  .purple .bottom-left-text {
+   .background-section .bottom-left-text {
     font-size: 1.2rem !important;
     max-width: 400px !important;
     color: #fff !important;
@@ -138,15 +149,14 @@
 
 @media screen and (max-width: 480px) {
   .background-section,
-  .purple .background-section {
+  .background-section.purple {
     padding: 1.5rem 1rem;
     min-height: 300px;
     gap: 1rem;
     background-size: cover;
     background-position: center center;
   }
-  .bottom-left-text,
-  .purple .bottom-left-text {
+  .background-section .bottom-left-text {
     font-size: 1.2rem !important;
     max-width: 400px !important;
     color: #fff !important;
@@ -170,16 +180,18 @@
     gap: 2rem;
     padding: 2.5rem 1.5rem;
   }
+
+  /* keep two-up layout on tablets/larger; account for gap */
   .location-box {
-    flex: 0 0 45%;
-    max-width: 100%;
+    flex: 0 0 calc(50% - 1.5rem);
+    max-width: calc(50% - 1.5rem);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .location-box {
+   .location-box {
     flex: 0 0 100%;
-    margin-bottom: 2rem;
+    max-width: 100%;
   }
   .location-icon {
     width: 64px;

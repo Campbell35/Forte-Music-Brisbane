@@ -103,104 +103,164 @@
 }
   
   /* About Section */
+/* ===============================
+   Root Layout
+================================= */
 .about-section {
   --gap: 1rem;
   --bg: #fff;
   --ink: #1a1a1a;
   --muted: #556;
   --brand: #2b6cb0;
+
   background: var(--bg);
   color: var(--ink);
   width: 100%;
-  box-sizing: border-box; /* ensures padding stays inside the width */
-  padding-inline: clamp(1.5rem, 5vw, 3rem); /* horizontal padding only */
-  padding-block: clamp(2rem, 5vh, 4rem);    /* vertical padding */
-  line-height: 1.6;
-  text-align: center;
+  box-sizing: border-box;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
+  padding-block: clamp(2rem, 5vh, 4rem);
+  margin-bottom: 5rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem; 
-}
-
-
-
-
-.about-section h1,
-.about-section h2 {
+  gap: 2.5rem;
   text-align: center;
-  margin: 0 0 0.5rem;
+  line-height: 1.6;
 }
-.about-section h1 {
+
+/* ===============================
+   Headings
+================================= */
+.about-header h1 {
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: var(--gap);
 }
+
 .about-section h2 {
-  color: #00a770;
   font-size: 2rem;
+  color: #00a770;
+  margin-bottom: 1rem;
 }
 
-
-.about-section p {
-  margin: 0 0 var(--gap);
-  color: var(--muted);
-  text-align: left;
+/* ===============================
+   Intro Paragraph
+================================= */
+.about-header p {
   font-size: 1.2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6, auto);
-  column-gap: 2.5rem;
-  row-gap: 1.2rem;
+  color: var(--muted);
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
 }
 
+/* ===============================
+   Side-by-Side Overview Paragraphs
+================================= */
+.about-columns p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+/* ===============================
+   Skills List
+================================= */
+.about-skills {
+  max-width: 80ch;
+  margin: 0 auto;
+}
 
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
   gap: 1rem 2rem;
-  padding-left: 1.25rem; /* bullet spacing */
-  list-style-type: none; /* remove default bullets */
-  padding-left: 1.5rem;/* classic bullet points */
-  max-width: 100%;
-  margin: 2rem auto;
+  list-style: none;
+  padding-left: 1.5rem;
   text-align: left;
-
 }
 
 .skills-list li::marker {
-  content: "◆"; /* diamond shape — change to any symbol */
-  color: #00a770; /* match heading color */
+  content: "◆";
+  color: #00a770;
   font-size: 1.3rem;
 }
 
-
-.about-cta {
-  font-weight: 600;
-  color: var(--ink);
-  border-left: none;
-  padding-bottom: 0.5rem;
-  margin-top: 1rem;
+/* ===============================
+   Benefits Paragraph
+================================= */
+.about-benefits p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
 }
-.full-link {
+
+/* ===============================
+   Call-to-Action
+================================= */
+.about-cta {
+  text-align: center;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trial-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--brand);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trial-button:hover {
+  background-color: #1e4e8c;
+}
+
+
+/* ===============================
+   Video Link
+================================= */
+.trial-link {
   display: inline-block;
   margin-top: 1rem;
-  font-weight: 800;
-  color: #00a770;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--brand);
   text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 1.3rem;
 }
 
-.full-link:hover {
-  color: #007a5e;
+.trial-link:hover {
   text-decoration: underline;
 }
 
+/* ===============================
+   Responsive Tweaks
+================================= */
+@media (max-width: 768px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
 
-
-
-
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}
 
 
   /* learn music section */
@@ -432,7 +492,7 @@
 }
 .location-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.5rem;
   padding: 3rem 2rem;
   background-color: #f0fdf4;
@@ -440,19 +500,15 @@
 }
 
 .location-box {
-  flex: 0 0 30%;
-  max-width: 320px;
-  padding: 1.25rem;
-  border: 2px solid #b2e5c2;
-  border-radius: 16px;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1 1 300px; /* responsive width */
+  max-width: 400px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .location-box:hover {
   transform: translateY(-4px);
@@ -465,7 +521,6 @@
 }
 
 /* Unique detail stacks */
-.location-details-south,
 .location-details-west,
 .location-details-woolloongabba {
   display: flex;
