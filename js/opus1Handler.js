@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
 
   console.log("Payload:", payload);
 
-  fetch("https://api.opus1.io/hooks/fortetoowongcoorparoo/5Q9XNlZ7Gcf8VBsmt3l1Mpz5yMo8/people/create", {
+  fetch("https://fortemusicbrisbane.com.au/_functions/sendToOpus", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
