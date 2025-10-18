@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
 
   console.log("Payload:", payload);
 
-  fetch("https://fortemusicbrisbane.com.au/_functions/sendToOpus", {
+  fetch("https://fortemusicbrisbane.com.au/\_functions/sendToOpus", {
     method: "POST",
     mode: "no-cors",
     headers: {
