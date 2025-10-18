@@ -44,7 +44,7 @@ form.addEventListener("submit", function (e) {
   })
    .then(() => {
       console.log("Webhook request sent.");
-      location.reload(); // 🔄 Refresh the page after submission
+      // location.reload(); // 🔄 Refresh the page after submission
     })
     .catch(err => console.error("Fetch error:", err));
   });
