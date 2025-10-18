@@ -36,7 +36,6 @@ form.addEventListener("submit", function (e) {
 
   fetch("/.netlify/functions/create-person", {
     method: "POST",
-    mode: "no-cors",
     headers: {
       "Content-Type": "application/json"
     },
