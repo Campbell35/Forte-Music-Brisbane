@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
 
   console.log("Payload:", payload);
 
-  fetch("https://fortemusicbrisbane.com.au/\_functions/sendToOpus", {
+  fetch("https://api.opus1.io/hooks/fortetoowongcoorparoo/5Q9XNlZ7Gcf8VBsmt3l1Mpz5yMo8/people/create", {
     method: "POST",
     mode: "no-cors",
     headers: {
@@ -44,7 +44,7 @@ form.addEventListener("submit", function (e) {
   })
    .then(() => {
       console.log("Webhook request sent.");
-      // location.reload(); // 🔄 Refresh the page after submission
+      location.reload(); // 🔄 Refresh the page after submission
     })
     .catch(err => console.error("Fetch error:", err));
   });
