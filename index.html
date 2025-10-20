@@ -57,7 +57,7 @@
       <a href="#about">About</a>
       <a href="#reviews">Reviews</a>
       <a href="#locations">Locations</a>
-      <a class="trial-link" href="#free-trial">Free trial – Book now!</a>
+      <a class="trial-link" href="#free-trial">Book a trial lesson now!</a>
     </nav>
   </header>
 
@@ -71,7 +71,7 @@
 
     <div class="form-container" id="free-trial">
       <form id="musicform">
-        <h2>Free trial lesson – Book today!!</h2>
+        <h2>Book a trial lesson today!!</h2>
 
         <!-- Lesson For -->
         <label for="lessonFor">Who are the lessons for?</label>
@@ -99,7 +99,6 @@
         <label for="location">Preferred Location</label>
         <select id="location" name="location" required>
           <option value="">Select a location</option>
-          <option value="stafford">Stafford</option>
           <option value="coorparoo">Coorparoo</option>
           <option value="toowong">Toowong</option>
         </select>
@@ -142,7 +141,6 @@
         <span class="age-range">6 months - 3.5 yrs</span>
       </div>
       <p>Jungle Music is Forte’s award winning early childhood music programme. Children are given the opportunity to experience a wide range of musical activities in a nurturing, safe environment.</p>
-      <button>Sign up for a free trial</button>
     </div>
     <div class="card yellow">
       <img src="assets/musicbox-icon-music-is-fun.png" alt="Music is fun Icon" class="card-icon">
@@ -152,7 +150,6 @@
       <span class="age-range">3.5 yrs - 4.5 yrs</span>
       </div>
       <p>Join in the “Music is fun”, our introductory piano course. There’s a whole host of musical activities designed to be fun and develop your child’s musical skills and senses.</p>
-      <button>Sign up for a free trial</button>
     </div>
     <div class="card purple">
       <img src="assets/musicbox-icon-piano-keys.png" alt="Piano Keys Icon" class="card-icon">
@@ -161,8 +158,7 @@
       <span class="label">Beginners</span>
       <span class="age-range">8 yrs +</span>
       </div>
-      <p>Junior Keys is our premier foundation piano course. In Junior Keys children develop a rich base of important musical skills, a strong platform on which to study any instrument in the future.</p>
-      <button>Sign up for a free trial</button>
+      <p>During this course your child will develop a set of essential musical skills including: Reading music, Aural skills, Keyboard harmony, pattern recognition, transposing, theory and more!</p>
     </div>
      <div class="card green">
       <img src="assets/musicbox-icon-junior-keys.png" alt="Junior Keys Icon" class="card-icon">
@@ -172,7 +168,6 @@
       <span class="age-range">5 yrs - 7 yrs</span>
       </div>
       <p>Junior Keys is our premier foundation piano course. In Junior Keys children develop a rich base of important musical skills, a strong platform on which to study any instrument in the future.</p>
-      <button>Sign up for a free trial</button>
     </div>
     
     <div class="card lightblue">
@@ -183,7 +178,6 @@
       <span class="age-range">7 yrs + Adults</span>
       </div>
       <p>At Forte you can learn a wide variety of instruments including piano, guitar, drums, singing, clarinet, saxophone, violin. Instruments offered vary from school to school.</p>
-      <button>Sign up for a free trial</button>
     </div>
   </div>
 
@@ -191,6 +185,7 @@
   <div class="about-section" role="region" aria-labelledby="about-title">
   <header class="about-header">
     <h1 id="about-title">Grow the young musician inside your child</h1>
+    <br/>
     <p>
       At Forte School of Music, we take a holistic approach to music education. Our passionate teachers nurture each individual’s abilities while fostering a love for music that lasts a lifetime.
     </p>
@@ -230,14 +225,14 @@
   <section class="about-cta">
   <p>Ready to begin? Explore courses for your age group and book a trial lesson today.</p>
   <a class="trial-link" href="#free-trial">Free trial – Book now!</a>
-  <a
+  <!-- <a
     href="https://www.youtube.com/embed/t_HyUI2X0kg?autoplay=1"
     class="full-link"
     data-fancybox
     data-type="iframe"
   >
     🎬 Watch a preview of our music classes
-  </a>
+  </a> -->
 </section>
 </div>
 
@@ -282,6 +277,7 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
+  <br/>
 
   <!-- Locations section -->
    <h1 id="locations" style="text-align:center; margin-top:2rem; text-decoration: underline; text-decoration-color: #f47224;">
@@ -348,7 +344,6 @@
         <label for="location">Preferred Location</label>
         <select id="location" name="location" required>
           <option value="">Select a location</option>
-          <option value="stafford">Stafford</option>
           <option value="coorparoo">Coorparoo</option>
           <option value="toowong">Toowong</option>
         </select>
@@ -363,14 +358,16 @@
 
         <!-- Instrument -->
         <label for="instrument">Choose Course / Instrument</label>
-        <select id="instrument" name="instrument" required>
+       <select id="instrument" name="instrument" required>
           <option value="">Select</option>
-          <option value="guitar">Guitar</option>
-          <option value="drums">Drums</option>
-          <option value="keyboard">Keyboard</option>
-          <option value="vocals">Vocals</option>
-          <option value="music-theory">Music Theory</option>
-          <option value="early-childhood">Early Childhood Music</option>
+          <option value="Jungle_music">Jungle Music</option>
+          <option value="music_is_fun">Music is Fun</option>
+          <option value="Piano_keys">Piano Keys</option>
+          <option value="Junior_keys">Junior Keys</option> 
+          <option value="Piano">Piano</option>
+          <option value="Guitar">Guitar</option>
+          <option value="Drums">Drums</option>
+          <option value="Violin">Violin</option>
         </select>
 
         <!-- Submit -->
