@@ -34,18 +34,18 @@ form.addEventListener("submit", function (e) {
 
   console.log("Payload:", payload);
 
-  fetch("https://api.opus1.io/hooks/fortetoowongcoorparoo/5Q9XNlZ7Gcf8VBsmt3l1Mpz5yMo8/people/create", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  })
-   .then(() => {
-      console.log("Webhook request sent.");
-      location.reload(); // 🔄 Refresh the page after submission
-    })
-    .catch(err => console.error("Fetch error:", err));
-  });
+ fetch("https://api.opus1.io/hooks/fortetoowongcoorparoo/5Q9XNlZ7Gcf8VBsmt3l1Mpz5yMo8/people/create", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(payload)
+})
+.then(() => {
+  console.log("Webhook request sent.");
+  window.location.href = "https://fortetoowongcoorparoo.opus1.io/m/trial"; // 🔁 Redirect after submission
+})
+.catch(err => console.error("Fetch error:", err));
+});
 });
