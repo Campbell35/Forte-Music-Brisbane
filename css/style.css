@@ -236,10 +236,11 @@
   position: relative;
   z-index: 1;
   margin-top: 0;
-  padding: 4rem 2rem 2rem ;
+  padding: 2rem 3rem 3rem 3rem; /* top right bottom left */
+  padding-right: 3rem; 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 4rem;
+  gap: 3.5rem;
   background-color: #f9f9f9;
 
   /* Centered max-width layout */
