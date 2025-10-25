@@ -142,6 +142,7 @@
 .about-skills {
   max-width: 80ch;
   margin: 0 auto;
+  text-align: center;
 }
 
 .skills-list {
@@ -149,8 +150,11 @@
   grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
   gap: 1rem 2rem;
   list-style: none;
-  padding-left: 1.5rem;
+  padding: 0;
+  justify-content: center;
   text-align: left;
+  margin: 2rem auto;
+  max-width: 60ch;
 }
 
 .skills-list li::marker {
@@ -158,6 +162,7 @@
   color: #00a770;
   font-size: 1.3rem;
 }
+
 
 /* ===============================
    Benefits Paragraph
