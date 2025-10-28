@@ -12,32 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 </head>
 <body>
-
-  <!-- Location Contact Bar -->
-  <!--start.html
-
-  <div class="location-bar">
-    <div class="location-container">
-      <nav>
-        <div class="location-links">
-          <div class="location-item">
-            Coorparoo 
-            <a href="tel:+61735248042">📞 <span>07 3524 8042</span></a>
-          </div>
-          <div class="location-item">
-            Stafford 
-            <a href="tel:+61735248043">📞 <span>07 3524 8043</span></a>
-          </div>
-          <div class="location-item">
-            Toowong 
-            <a href="tel:+61735248044">📞 <span>07 3524 8044</span></a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
-  -->
-
   <!-- Header with Hamburger Nav -->
   <!-- Fixed Header -->
   <header class="header-wrapper">
@@ -130,7 +104,10 @@
         </select>
 
         <!-- Submit -->
-        <button type="submit" id="submitBtn">Submit</button>
+        <button id="submitBtn" type="submit">
+         <span id="btnText">Submit</span>
+         <span id="spinner" style="display:none;">⏳</span>
+        </button>
          <script>
             document.getElementById('submitBtn').addEventListener('click', () => {
             localStorage.setItem('submitLog', 'Button was clicked');
@@ -234,17 +211,9 @@
   </section>
 
   <section class="about-cta">
-  <p>Ready to begin? Explore courses for your age group and book a trial lesson today.</p>
-  <a class="trial-link" href="#free-trial">Book a trial now!</a>
-  <!-- <a
-    href="https://www.youtube.com/embed/t_HyUI2X0kg?autoplay=1"
-    class="full-link"
-    data-fancybox
-    data-type="iframe"
-  >
-    🎬 Watch a preview of our music classes
-  </a> -->
-</section>
+   <p>Ready to begin? Explore courses for your age group and book a trial lesson today.</p>
+     <a class="trial-link" href="#free-trial">Book a trial now!</a>
+  </section>
 </div>
 
   <h1 id="reviews" style="text-align:center; margin-top:2rem; text-decoration: underline; text-decoration-color: #f47224;">
