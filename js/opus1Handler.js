@@ -20,7 +20,8 @@ form.addEventListener("submit", function (e) {
     student_primary_phone: document.getElementById("phone").value.trim(),
     student_tags: [
       document.getElementById("instrument").value.trim(),
-      document.getElementById("location").value.trim()
+      document.getElementById("location").value.trim(),
+      document.getElementById("age").value.trim()
     ]
   };
 
