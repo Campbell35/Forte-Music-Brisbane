@@ -14,24 +14,25 @@ form.addEventListener("submit", function (e) {
 
   // Always include student fields
   const payload = {
-    student_first_name: document.getElementById("studentName").value.trim(),
-    student_last_name: document.getElementById("studentLastName").value.trim(),
-    student_email: document.getElementById("email").value.trim(),
-    student_primary_phone: document.getElementById("phone").value.trim(),
-    student_tags: [
-      document.getElementById("instrument").value.trim(),
-      document.getElementById("location").value.trim(),
-      document.getElementById("age").value.trim()
-    ]
-  };
+  student_first_name: document.getElementById("studentName").value.trim(),
+  student_last_name: document.getElementById("studentLastName").value.trim(),
+  student_email: document.getElementById("email").value.trim(),
+  student_primary_phone: document.getElementById("phone").value.trim(),
+  student_status: "Online Prospects",
+  student_tags: [
+    document.getElementById("instrument").value.trim(),
+    document.getElementById("location").value.trim(),
+    document.getElementById("age").value.trim()
+  ]
+};
 
-  // Conditionally include parent fields if lesson is for a child
-  if (lessonFor === "child") {
-    payload.parent1_first_name = document.getElementById("name").value.trim();
-    payload.parent1_last_name = document.getElementById("parentLastName").value.trim();
-    payload.parent1_email = document.getElementById("email").value.trim();
-    payload.parent1_primary_phone = document.getElementById("phone").value.trim();
-  }
+if (lessonFor === "child") {
+  payload.parent1_first_name = document.getElementById("name").value.trim();
+  payload.parent1_last_name = document.getElementById("parentLastName").value.trim();
+  payload.parent1_email = document.getElementById("email").value.trim();
+  payload.parent1_primary_phone = document.getElementById("phone").value.trim();
+  payload.parent1_status = "Online Prospects";
+}
 
   console.log("Payload:", payload);
 
