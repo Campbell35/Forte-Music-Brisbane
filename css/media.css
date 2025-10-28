@@ -39,22 +39,6 @@
   color: #e0e0ff; /* soft hover contrast */
 }
 
-.trial-link {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 10px 16px;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 6px;
-  width: 100%;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.trial-link:hover {
-  color: #2b6cb0;
-}
 
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex;
