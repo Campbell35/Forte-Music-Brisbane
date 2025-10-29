@@ -7,7 +7,7 @@ exports.handler = async function (event) {
     body: JSON.stringify(payload)
   });
 
-  const text = await response.json(); // Use .json() if you're sure the response is JSON
+  const text = await response.text(); // Use .json() if you're sure the response is JSON
   return {
     statusCode: response.status,
     headers: {
