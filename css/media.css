@@ -3,42 +3,75 @@
   .header-wrapper {
     padding: 0 12px;
   }
+
   .logo img {
     max-width: 160px;
   }
+
   .nav-links {
     gap: 24px;
+  }
+
+  .header-right {
+    margin-left: -20px;
+    padding-bottom: 8px;
+  }
+
+  .contact-numbers {
+    gap: 16px;
+    font-size: 0.95em;
   }
 }
 
 @media screen and (max-width: 768px) {
   .header-wrapper {
     padding: 0 8px;
-    height: 60px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
   }
+
   .logo img {
     max-width: 120px;
   }
+
   .nav-toggle-label {
     display: flex;
   }
+
+  .header-right {
+    margin-left: 0;
+    padding-bottom: 12px;
+    align-items: center;
+  }
+
+  .contact-numbers {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+
   .nav-links {
-  background-color: #2b6cb0; /* brand blue */
-  color: #fff;
-}
+    background-color: #2b6cb0;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+  }
 
-.nav-links a {
-  color: #fff;
-  font-size: 1.1em;
-  padding: 6px 0;
-  text-decoration: none;
-}
+  .nav-links a {
+    color: #fff;
+    font-size: 1.1em;
+    padding: 6px 0;
+    text-decoration: none;
+  }
 
-.nav-links a:hover {
-  text-decoration: underline;
-  color: #e0e0ff; /* soft hover contrast */
-}
-
+  .nav-links a:hover {
+    text-decoration: underline;
+    color: #e0e0ff;
+  }
 
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex;
@@ -48,25 +81,47 @@
 @media screen and (max-width: 480px) {
   .header-wrapper {
     padding: 0 4px;
-    height: 54px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
   }
+
   .logo img {
     max-width: 90px;
   }
+
+  .header-right {
+    margin-left: 0;
+    padding-bottom: 14px;
+    align-items: center;
+  }
+
+  .contact-numbers {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85em;
+    margin-bottom: 6px;
+  }
+
   .nav-links {
     top: 54px;
     right: 4px;
     min-width: 140px;
     padding: 10px 8px;
     gap: 12px;
+    flex-direction: column;
+    align-items: center;
   }
+
   .nav-links a {
     font-size: 1em;
   }
+
   .trial-link {
     font-size: 0.95em;
     padding: 6px 8px;
   }
+
   .nav-toggle-label {
     top: 12px;
     right: 8px;

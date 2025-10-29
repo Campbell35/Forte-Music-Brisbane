@@ -4,18 +4,30 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
   z-index: 10;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  align-items: flex-start;
+  padding: 10px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
   max-width: 200px;
   height: auto;
+}
+.header-right {
+  flex: 1; /* takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers contact + nav horizontally */
+  margin-left: -200px; /* shifts it left */
+  padding-bottom: 30px; /* adds space below */
+}
+.contact-numbers {
+  display: flex;
+  gap: 20px;
 }
 
 /* ================= NAVIGATION ================= */
@@ -25,7 +37,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .nav-links a {
