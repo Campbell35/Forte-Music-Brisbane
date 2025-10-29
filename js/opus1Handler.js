@@ -51,7 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
   body: JSON.stringify(payload)
 })
 .then(res => res.json())
-.then(data => console.log(data))
+.then(data => {
+  console.log(data);
+  // Wait 2 seconds before redirecting
+  setTimeout(() => {
+    window.location.href = "https://fortetoowongcoorparoo.opus1.io/m/trial";
+  }, 5000); // 2000 milliseconds = 2 seconds
+})
 .catch(err => console.error(err));
-  });
+
+});
+
+// close DOMContentLoaded listener
 });
