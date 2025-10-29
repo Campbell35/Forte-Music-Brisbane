@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 exports.handler = async function (event) {
   const payload = JSON.parse(event.body);
 
@@ -9,7 +7,7 @@ exports.handler = async function (event) {
     body: JSON.stringify(payload)
   });
 
-  const text = await response.text(); // Use .json() if you're sure
+  const text = await response.json(); // Use .json() if you're sure the response is JSON
   return {
     statusCode: response.status,
     headers: {
@@ -19,3 +17,4 @@ exports.handler = async function (event) {
     body: text
   };
 };
+
