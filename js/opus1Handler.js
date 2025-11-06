@@ -21,25 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const lessonFor = document.getElementById("lessonFor").value;
 
     const payload = {
-      student_first_name: document.getElementById("studentName").value.trim(),
-      student_last_name: document.getElementById("studentLastName").value.trim(),
-      student_email: document.getElementById("email").value.trim(),
-      student_primary_phone: document.getElementById("phone").value.trim(),
-      student_status: "Online Prospect",
-      student_tags: [
-        document.getElementById("instrument").value.trim(),
-        document.getElementById("location").value.trim(),
-        document.getElementById("age").value.trim()
-      ]
-    };
+  student_first_name: document.getElementById("studentName").value.trim(),
+  student_last_name: document.getElementById("studentLastName").value.trim(),
+  student_email: document.getElementById("email").value.trim(),
+  student_status: "Online Prospect",
+  student_tags: [
+    document.getElementById("instrument").value.trim(),
+    document.getElementById("location").value.trim(),
+    document.getElementById("age").value.trim()
+  ]
+};
 
-    if (lessonFor === "child") {
-      payload.parent1_first_name = document.getElementById("name").value.trim();
-      payload.parent1_last_name = document.getElementById("parentLastName").value.trim();
-      payload.parent1_email = document.getElementById("email").value.trim();
-      payload.parent1_primary_phone = document.getElementById("phone").value.trim();
-      payload.parent1_status = "Online Prospect";
-    }
+// Only include student phone if lesson is not for a child
+if (lessonFor !== "child") {
+  payload.student_primary_phone = document.getElementById("phone").value.trim();
+}
+
+if (lessonFor === "child") {
+  payload.parent1_first_name = document.getElementById("name").value.trim();
+  payload.parent1_last_name = document.getElementById("parentLastName").value.trim();
+  payload.parent1_email = document.getElementById("email").value.trim();
+  payload.parent1_primary_phone = document.getElementById("phone").value.trim();
+  payload.parent1_status = "Online Prospect";
+}
 
     console.log("Payload:", payload);
 
