@@ -52,80 +52,99 @@
     margin-bottom: 8px;
   }
 
-  .nav-links {
+ .nav-links {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 70vh;
+  background-color: rgba(43, 108, 176, 0.9); /* semi-transparent blue */
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 16px 20px;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.25);
+  transition: right 0.35s ease, opacity 0.35s ease;
+  opacity: 0;
+  z-index: 999;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #e0e0ff;
+  transform: scale(1.05);
+}
+
+/* When nav toggle is checked, slide in */
+.nav-toggle:checked + .nav-toggle-label + .nav-links {
+  right: 0;          /* slide into view */
+  opacity: 1;
+}
+.trial-link {
+    display: inline-block;
+    font-size: 1em;
+    padding: 10px 20px;        /* wider padding for mobile */
+    min-width: 180px;          /* longer width */
+    text-align: center;
     background-color: #2b6cb0;
     color: #fff;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 0;
+    border-radius: 8px;
+    transition: all 0.25s ease;
   }
 
-  .nav-links a {
-    color: #fff;
-    font-size: 1.1em;
-    padding: 6px 0;
-    text-decoration: none;
-  }
-
-  .nav-links a:hover {
-    text-decoration: underline;
-    color: #e0e0ff;
-  }
-
-  .nav-toggle:checked + .nav-toggle-label + .nav-links {
-    display: flex;
+  .trial-link:hover,
+  .trial-link:active {
+    background-color: #1a4a80; /* darker shade on hover/tap */
+    transform: scale(1.05);    /* slight zoom effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   }
 }
 
-@media screen and (max-width: 480px) {
-  .header-wrapper {
+@media screen and (max-width: 480px) { 
+  .header-wrapper { 
     padding: 0 4px;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-  }
+    height: auto; 
+    flex-direction: column; 
+    align-items: center; } 
+  .logo img { 
+    max-width: 90px; } 
+  .header-right { 
+    margin-left: 0; 
+    padding-bottom: 14px; 
+    align-items: center; }
+  .contact-numbers { 
+    flex-direction: column; 
+    gap: 4px; 
+    font-size: 0.85em; 
+    margin-bottom: 6px; } 
+  .nav-links { 
+    top: 54px; 
+    right: 4px; 
+    min-width: 140px; 
+    padding: 10px 8px; 
+    gap: 12px; 
+    flex-direction: column; 
+    align-items: center; }
 
-  .logo img {
-    max-width: 90px;
-  }
-
-  .header-right {
-    margin-left: 0;
-    padding-bottom: 14px;
-    align-items: center;
-  }
-
-  .contact-numbers {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 0.85em;
-    margin-bottom: 6px;
-  }
-
-  .nav-links {
-    top: 54px;
-    right: 4px;
-    min-width: 140px;
-    padding: 10px 8px;
-    gap: 12px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links a {
+  .nav-links a { 
     font-size: 1em;
-  }
-
-  .trial-link {
-    font-size: 0.95em;
-    padding: 6px 8px;
-  }
-
-  .nav-toggle-label {
-    top: 12px;
-    right: 8px;
-  }
+   } 
+   .trial-link { 
+     font-size: 0.95em; 
+     padding: 6px 8px; } 
+    .nav-toggle-label { 
+      top: 12px; 
+      right: 8px; }
 }
 
 /* --- BACKGROUND SECTION MEDIA QUERIES --- */
@@ -191,13 +210,20 @@
 }
 
 @media screen and (max-width: 480px) {
-  .background-section,
-  .background-section.purple {
+  .background-section {
     padding: 1rem;
     min-height: 280px;
     gap: 0.8rem;
     background-size: cover;
     background-position: center center;
+  }
+  .background-section.purple {
+    padding: 1rem;
+    min-height: 280px;
+    gap: 0.8rem;
+    background-size: cover;       /* fit image inside container */
+    background-repeat: no-repeat;   /* prevent tiling */
+    background-position: center;    /* keep centered */
   }
 
   .background-section .bottom-left-text {
@@ -218,7 +244,6 @@
     height: auto !important;
   }
 }
-
 /* --- LOCATION SECTION --- */
 @media screen and (max-width: 1024px) {
   .location-section {
