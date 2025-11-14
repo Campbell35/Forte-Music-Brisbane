@@ -137,6 +137,7 @@
       <span class="age-range">6 months - 3.5 yrs</span>
     </div>
     <p>Jungle Music is Forte’s award winning early childhood music programme. Children are given the opportunity to experience a wide range of musical activities in a nurturing, safe environment.</p>
+    <button>Book Trial</button>
   </div>
 
   <div class="card yellow">
@@ -147,6 +148,7 @@
       <span class="age-range">3.5 yrs - 4.5 yrs</span>
     </div>
     <p>Join in the “Music is fun”, our introductory piano course. There’s a whole host of musical activities designed to be fun and develop your child’s musical skills and senses.</p>
+    <button>Book Trial</button>
   </div>
 
   <div class="card green">
@@ -157,6 +159,7 @@
       <span class="age-range">5 yrs - 7 yrs</span>
     </div>
     <p>Junior Keys is our premier foundation piano course. In Junior Keys children develop a rich base of important musical skills, a strong platform on which to study any instrument in the future.</p>
+    <button>Book Trial</button>
   </div>
 
   <div class="card purple">
@@ -167,6 +170,7 @@
       <span class="age-range">8 yrs +</span>
     </div>
     <p>During this course your child will develop a set of essential musical skills including: Reading music, Aural skills, Keyboard harmony, pattern recognition, transposing, theory and more!</p>
+    <button>Book Trial</button>
   </div>
 
   <div class="card lightblue">
@@ -177,6 +181,7 @@
       <span class="age-range">7 yrs + Adults</span>
     </div>
     <p>At Forte you can learn a wide variety of instruments including piano, guitar, drums, singing, clarinet, saxophone, violin. Instruments offered vary from school to school.</p>
+    <button>Book Trial</button>
   </div>
 </section>
 
@@ -295,7 +300,7 @@
   <span class="location-label-west">
     <i class="fa fa-envelope"></i> Email
   </span>
-  <span class="location-email">info@fortemusic.com</span>
+  <span class="location-email">toowong@fortemusic.com</span>
 </div>
     <div id="map-coorparoo" style="height:300px;"></div>
   </div>
@@ -421,7 +426,28 @@
   </div>
 </footer>
 
+ <script>
+  // Select all card buttons
+  const buttons = document.querySelectorAll('.card button');
 
+  buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      if (index < 4) {
+        // First 4 cards → scroll to bottom (purple section)
+        document.querySelector('.background-section.purple').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        // 5th card → scroll to top (green section)
+        document.querySelector('.background-section').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
   <script src="js/leafletmap.js"></script>
   <script src="js/opus1Handler.js"></script>
   <script src="js/form.js"></script>
