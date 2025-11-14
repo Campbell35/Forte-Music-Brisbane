@@ -284,20 +284,32 @@
   .location-section {
     padding: 2rem 1rem;
   }
+
   .location-box {
     padding: 1rem;
+    text-align: left; /* force all content left-aligned on mobile */
   }
+
   .location-label-south,
   .location-label-west,
   .location-label-woolloongabba {
     font-size: 0.95rem;
   }
+
   .location-phone-south,
   .location-phone-west,
   .location-phone-woolloongabba {
     font-size: 0.9rem;
   }
+
+  /* specifically target the address paragraph */
+  .location-box p,
+  .location-address {
+    text-align: left;
+    margin-left: 0; /* ensure no unintended centering */
+  }
 }
+
 
 /* --- SLIDESHOW SECTION --- */
 @media screen and (max-width: 1024px) {
