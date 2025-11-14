@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/media.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
   <!-- Header with Hamburger Nav -->
@@ -277,31 +280,47 @@
       Locations </h1>
   <div class="location-section">
   <div class="location-box west-end">
-    <img src="assets/image.png" alt="West End Map" class="location-icon">
     <h2>Coorparoo</h2>
     <div class="location-details-west">
-      <span class="location-label-west">Phone</span>
-      <span class="location-phone-west">(07) 3397 6935</span>
-    </div>
-    <p>262 Old Cleveland Rd
-       Coorparoo, QLD 4151</p>
-    <a href="https://www.google.com/maps/place/Forte+Music/@-27.4951353,153.0547954,17z/data=!3m1!4b1!4m6!3m5!1s0x6b915a4a4d35f99d:0x90e4639a833567e0!8m2!3d-27.4951401!4d153.0573703!16s%2Fg%2F1hc7qmys0?hl=en&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-      View on Google Maps
-    </a>
+  <span class="location-label-west">
+    <i class="fa fa-phone"></i> Phone
+  </span>
+  <span class="location-phone-west">(07) 3397 6935</span>
+
+  <span class="location-label-west">
+    <i class="fa fa-map-marker-alt"></i> Address
+  </span>
+  <span class="location-address">262 Old Cleveland Rd, Coorparoo, QLD 4151</span>
+
+  <span class="location-label-west">
+    <i class="fa fa-envelope"></i> Email
+  </span>
+  <span class="location-email">info@fortemusic.com</span>
+</div>
+    <div id="map-coorparoo" style="height:300px;"></div>
   </div>
 
   <div class="location-box woolloongabba">
-    <img src="assets/image.png" alt="Woolloongabba Map" class="location-icon">
     <h2>Toowong</h2>
-    <div class="location-details-woolloongabba">
-      <span class="location-label-woolloongabba">Phone</span>
-      <span class="location-phone-woolloongabba">(07) 3871 0066</span>
-    </div>
-    <p>524 Milton Rd
-       Toowong, QLD 4066</p>
-    <a href="https://www.google.com/maps/place/Forte+School+of+Music+Toowong/@-27.4783795,152.9875568,17z/data=!3m1!4b1!4m6!3m5!1s0x6b9150eaa5b4cd3d:0xafcb117598c39720!8m2!3d-27.4783843!4d152.9901317!16s%2Fg%2F1tk6w252?hl=en&entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-      View on Google Maps
-    </a>
+   <div class="location-details-woolloongabba">
+  <span class="location-label-woolloongabba">
+    <i class="fa fa-phone"></i> Phone
+  </span>
+  <span class="location-phone-woolloongabba">(07) 3871 0066</span>
+
+  <span class="location-label-woolloongabba">
+    <i class="fa fa-map-marker-alt"></i> Address
+  </span>
+  <span class="location-address">524 Milton Rd, Toowong, QLD 4066</span>
+
+  <span class="location-label-woolloongabba">
+    <i class="fa fa-envelope"></i> Email
+  </span>
+  <span class="location-email">toowong@fortemusic.com</span>
+</div>
+
+
+   <div id="map-toowong" style="height:300px;"></div>
   </div>
 </div>
 <section class="background-section purple">
@@ -403,7 +422,7 @@
 </footer>
 
 
-
+  <script src="js/leafletmap.js"></script>
   <script src="js/opus1Handler.js"></script>
   <script src="js/form.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>

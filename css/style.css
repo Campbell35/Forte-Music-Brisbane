@@ -500,15 +500,17 @@
   max-width: 400px;
   background: #fff;
   padding: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem; /* more rounded corners */
+  border: 2px solid #22c55e; /* green border (Tailwind green-500 shade) */
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 .location-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #16a34a; /* darker green on hover */
 }
 
 .location-icon {
@@ -521,24 +523,29 @@
 .location-details-woolloongabba {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* align left */
   margin-bottom: 1rem;
+  gap: 0.5rem; /* spacing between rows */
 }
 
-.location-label-south,
 .location-label-west,
 .location-label-woolloongabba {
   font-weight: bold;
   font-size: 1rem;
-  color: #333;
+  color: #22c55e; /* green */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.location-phone-south,
 .location-phone-west,
-.location-phone-woolloongabba {
+.location-phone-woolloongabba,
+.location-address,
+.location-email {
   font-size: 0.95rem;
   color: #555;
 }
+
 
 /* Link styling */
 .location-box a {
