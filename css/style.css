@@ -503,7 +503,8 @@
   border-radius: 1rem; /* more rounded corners */
   border: 2px solid #22c55e; /* green border (Tailwind green-500 shade) */
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  text-align: center;
+  text-align: left;
+  font-family: 'Roboto Condensed', sans-serif;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
