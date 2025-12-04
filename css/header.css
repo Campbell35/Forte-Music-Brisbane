@@ -167,8 +167,8 @@
   padding: 3rem 2rem 1rem;
   box-sizing: border-box;
   gap: 2rem;
-  background-image: url('https://fortemusicbrisbane.au/wp-content/uploads/2024/12/topbnr-bg-dtp2.jpg');
-  /* background-image: url('../assets/pexels-mart-production-8471817.jpg'); */
+  /* background-image: url('https://fortemusicbrisbane.au/wp-content/uploads/2024/12/topbnr-bg-dtp2.jpg'); */
+  background-image: url('../assets/pexels-mart-production-8471817.jpg');
 }
 
 .gradient-overlay {
