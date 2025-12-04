@@ -26,11 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
   student_email: document.getElementById("email").value.trim(),
   student_status: "Online Prospect",
   student_tags: [
+    "Web Prospect", // 👈 global tag added here
     document.getElementById("instrument").value.trim(),
     document.getElementById("location").value.trim(),
     document.getElementById("age").value.trim()
   ]
 };
+
 
 // Only include student phone if lesson is not for a child
 if (lessonFor !== "child") {

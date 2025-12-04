@@ -148,28 +148,8 @@
 }
 
 /* --- BACKGROUND SECTION MEDIA QUERIES --- */
+/* --- BACKGROUND SECTION MEDIA QUERIES --- */
 @media screen and (max-width: 1024px) {
-  .background-section,
-  .background-section.purple {
-    padding: 2.5rem 1.5rem 1rem;
-    min-height: 600px;
-    background-size: cover;
-    background-position: center center;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .background-section .bottom-left-text {
-    font-size: 1.2rem !important;
-    max-width: 400px !important;
-  }
-  .form-container {
-    font-size: 0.85rem !important;
-    max-width: 320px !important;
-    padding: 1.5rem !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .background-section,
   .background-section.purple {
     flex-direction: column;
@@ -178,8 +158,9 @@
     padding: 1.5rem 1rem;
     min-height: 400px;
     gap: 1rem;
-    background-size: cover;
-    background-position: center center;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-image: url("your-image.jpg") !important; /* 👈 add background image */
   }
 
   .background-section .gradient-overlay {
@@ -205,6 +186,48 @@
   .form-container img,
   .background-section img {
     max-width: 70% !important;        /* shrink images */
+    height: auto !important;
+  }
+}
+
+/* --- SAME RULES FOR 768px --- */
+@media screen and (max-width: 768px) {
+  .background-section,
+  .background-section.purple {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       /* center everything */
+    padding: 1.5rem 1rem;
+    min-height: 400px;
+    gap: 1rem;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-image: url("your-image.jpg") !important; /* 👈 same background image */
+  }
+
+  .background-section .gradient-overlay {
+    background: linear-gradient(25deg, rgba(0,167,112,0.9) 20%, rgba(0,167,112,0) 40%);
+  }
+  .background-section.purple .gradient-overlay {
+    background: linear-gradient(25deg, rgba(106,13,173,0.9) 20%, rgba(106,13,173,0) 40%);
+  }
+
+  .background-section .bottom-left-text {
+    font-size: 1rem !important;
+    max-width: 300px !important;
+    line-height: 1.3 !important;
+    margin-top: 0 !important;
+  }
+
+  .form-container {
+    font-size: 0.8rem !important;
+    max-width: 280px !important;
+    padding: 1rem !important;
+  }
+
+  .form-container img,
+  .background-section img {
+    max-width: 70% !important;
     height: auto !important;
   }
 }
