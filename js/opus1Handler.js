@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     spinner.style.display = "inline";
     redirectMsg.style.display = "block";
 
-    const lessonFor = document.getElementById("lessonFor").value;
+   const lessonFor = document.getElementById("lessonFor").value;
 
-    const payload = {
+   const payload = {
   student_first_name: document.getElementById("studentName").value.trim(),
   student_last_name: document.getElementById("studentLastName").value.trim(),
   student_email: document.getElementById("email").value.trim(),
@@ -51,6 +51,63 @@ if (lessonFor === "child") {
   console.log("Payload:", payload);
 
   const newWindow = window.open("", "_blank");
+
+if (newWindow) {
+  const doc = newWindow.document;
+
+  doc.open();
+  doc.write(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Redirecting…</title>
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+          }
+          .card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 460px;
+            width: 90%;
+          }
+          .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e0e0e0;
+            border-top-color: #0078ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+          }
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <h2>Preparing Your Booking…</h2>
+          <p>Thanks for submitting your details. We’re getting everything ready and will redirect you shortly.</p>
+          <div class="spinner"></div>
+        </div>
+      </body>
+    </html>
+  `);
+  doc.close();
+}
+
 
   fetch("/.netlify/functions/proxy", {
   method: "POST",
