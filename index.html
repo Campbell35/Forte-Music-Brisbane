@@ -124,6 +124,9 @@
          <span id="btnText">Submit</span>
          <span id="spinner" style="display:none;">⏳</span>
         </button>
+        <p id="redirectMsg" style="display:none; margin-top:8px; font-size:14px;">
+           You’ll be redirected shortly to book your trial. 
+        </p>
          <script>
             document.getElementById('submitBtn').addEventListener('click', () => {
             localStorage.setItem('submitLog', 'Button was clicked');
@@ -399,6 +402,9 @@
 
         <!-- Submit -->
         <button type="submit">Submit</button>
+        <p id="redirectMsg" style="display:none; margin-top:8px; font-size:14px;">
+           You’ll be redirected shortly to book your trial.
+         </p>
       </form>
     </div>
     <div class="bottom-left-text">

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("submitBtn");
   const btnText = document.getElementById("btnText");
   const spinner = document.getElementById("spinner");
+  const redirectMsg = document.getElementById("redirectMsg");
 
   if (!form) {
     console.error("Form not found!");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.disabled = true;
     btnText.textContent = "Sending...";
     spinner.style.display = "inline";
+    redirectMsg.style.display = "block";
 
     const lessonFor = document.getElementById("lessonFor").value;
 
@@ -46,10 +48,11 @@ if (lessonFor === "child") {
   payload.parent1_primary_phone = document.getElementById("phone").value.trim();
   payload.parent1_status = "Online Prospect";
 }
+  console.log("Payload:", payload);
 
-    console.log("Payload:", payload);
+  const newWindow = window.open("", "_blank");
 
-   fetch("/.netlify/functions/proxy", {
+  fetch("/.netlify/functions/proxy", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -61,8 +64,8 @@ if (lessonFor === "child") {
   console.log(data);
   // Wait 2 seconds before redirecting
   setTimeout(() => {
-    window.location.href = "https://fortetoowongcoorparoo.opus1.io/m/trial";
-  }, 5000); // 2000 milliseconds = 2 seconds
+    newWindow.location.href = "https://fortetoowongcoorparoo.opus1.io/m/trial";
+  }, 2000); // 2000 milliseconds = 2 seconds
 })
 .catch(err => console.error(err));
 
