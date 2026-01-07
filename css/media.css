@@ -150,7 +150,19 @@
 /* --- BACKGROUND SECTION MEDIA QUERIES --- */
 /* --- BACKGROUND SECTION MEDIA QUERIES --- */
 @media screen and (max-width: 1024px) {
-  .background-section,
+  .background-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       /* center everything */
+    padding: 1.5rem 1rem;
+    min-height: 400px;
+    gap: 1rem;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-image: url("/assets/pexels-mart-production-8471817.jpg") !important; /* 👈 add background image */
+
+    
+  }
   .background-section.purple {
     flex-direction: column;
     justify-content: center;
@@ -160,7 +172,7 @@
     gap: 1rem;
     background-size: cover !important;
     background-position: center center !important;
-    background-image: url("your-image.jpg") !important; /* 👈 add background image */
+    background-image: url("/assets/DSC_1932.jpg") !important; /* 👈 add background image */
   }
 
   .background-section .gradient-overlay {
@@ -192,7 +204,17 @@
 
 /* --- SAME RULES FOR 768px --- */
 @media screen and (max-width: 768px) {
-  .background-section,
+  .background-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       /* center everything */
+    padding: 1.5rem 1rem;
+    min-height: 400px;
+    gap: 1rem;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-image: url("/assets/pexels-mart-production-8471817.jpg") !important; /* 👈 same background image */
+  }
   .background-section.purple {
     flex-direction: column;
     justify-content: center;
@@ -202,7 +224,7 @@
     gap: 1rem;
     background-size: cover !important;
     background-position: center center !important;
-    background-image: url("your-image.jpg") !important; /* 👈 same background image */
+    background-image: url("/assets/DSC_1932.jpg") !important; /* 👈 same background image */
   }
 
   .background-section .gradient-overlay {
