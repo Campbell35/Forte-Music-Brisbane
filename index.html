@@ -372,27 +372,18 @@
 </footer>
 
  <script>
-  // Select all card buttons
   const buttons = document.querySelectorAll('.card button');
 
-  buttons.forEach((btn, index) => {
+  buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (index < 4) {
-        // First 4 cards → scroll to bottom (purple section)
-        document.querySelector('.background-section.purple').scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      } else {
-        // 5th card → scroll to top (green section)
-        document.querySelector('.background-section').scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+      document.querySelector('.background-section').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     });
   });
 </script>
+
   <script src="js/leafletmap.js"></script>
   <script src="js/bookingLinks.js"></script>
   <script src="js/opus1Handler.js"></script>
