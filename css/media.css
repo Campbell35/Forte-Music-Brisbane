@@ -159,7 +159,7 @@
     gap: 1rem;
     background-size: cover !important;
     background-position: center center !important;
-    background-image: url("/assets/pexels-mart-production-8471817.jpg") !important; /* 👈 add background image */
+    background-image: url("../assets/pexels-mart-production-8471817.jpg") !important; /* 👈 add background image */
 
     
   }
@@ -172,7 +172,7 @@
     gap: 1rem;
     background-size: cover !important;
     background-position: center center !important;
-    background-image: url("/assets/DSC_1932.jpg") !important; /* 👈 add background image */
+    background-image: url("../assets/DSC_1932.jpg") !important; /* 👈 add background image */
   }
 
   .background-section .gradient-overlay {
@@ -261,15 +261,21 @@
     gap: 0.8rem;
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/pexels-mart-production-8471817.jpg") !important;
   }
+
   .background-section.purple {
     padding: 1rem;
     min-height: 280px;
     gap: 0.8rem;
-    background-size: cover;       /* fit image inside container */
-    background-repeat: no-repeat;   /* prevent tiling */
-    background-position: center;    /* keep centered */
+    background-size: cover;          /* fit image inside container */
+    background-repeat: no-repeat;    /* prevent tiling */
+    background-position: center;     /* keep centered */
+    background-image: url("../assets/DSC_1932.jpg") !important;
   }
+}
+
 
   .background-section .bottom-left-text {
     font-size: 0.9rem !important;     /* even smaller text */

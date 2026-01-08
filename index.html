@@ -61,9 +61,10 @@
     </div>
 
     <div class="form-container" id="free-trial">
+      <div class="steps-note">
+       <strong>Step 1:</strong> Fill in your details below.<br>
+     </div>
       <form id="musicform">
-        <h2>Book a trial lesson today!!</h2>
-
         <!-- Lesson For -->
         <label for="lessonFor">Who are the lessons for?</label>
         <select id="lessonFor" name="lessonFor" required>
@@ -124,14 +125,14 @@
          <span id="btnText">Submit</span>
          <span id="spinner" style="display:none;">⏳</span>
         </button>
-        <p id="redirectMsg" style="display:none; margin-top:8px; font-size:14px;">
-           You’ll be redirected shortly to book your trial. 
-        </p>
-         <script>
-            document.getElementById('submitBtn').addEventListener('click', () => {
-            localStorage.setItem('submitLog', 'Button was clicked');
-           });
-        </script>
+        <div id="bookingLinkContainer" style="display:none; margin-top:20px;">S
+
+          <p class="step2-note">
+          <strong>Step 2:</strong> After submitting, choose your trial lesson time on the next page.
+         </p>
+
+          <a id="bookingLink" href="#" class="booking-btn">Book Your Trial Time</a>
+      </div>
       </form>
     </div>
   </section>
@@ -339,81 +340,9 @@
   </div>
 </div>
 <section class="background-section purple">
-    <div class="gradient-overlay"></div>
+  <div class="gradient-overlay"></div>
+</section>
 
-    <div class="form-container" id="free-trial">
-      <form id="musicform">
-        <h2>Free trial lesson – Book today!!</h2>
-
-        <!-- Lesson For -->
-        <label for="lessonFor">Who are the lessons for?</label>
-        <select id="lessonFor2" name="lessonFor" required>
-          <option value="">Select</option>
-          <option value="myself">Myself / Adult</option>
-          <option value="child">Child</option>
-        </select>
-
-        <!-- Parent Info -->
-        <div id="parentFields2">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name">
-          <label for="parentLastName">Your Last Name</label>
-          <input type="text" id="parentLastName" name="parentLastName">
-        </div>
-
-        <!-- Shared Info -->
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <!-- Location -->
-        <label for="location">Preferred Location</label>
-        <select id="location" name="location" required>
-          <option value="">Select a location</option>
-          <option value="coorparoo">Coorparoo</option>
-          <option value="toowong">Toowong</option>
-        </select>
-
-        <!-- Student Info -->
-        <div id="studentFields2">
-          <label for="studentName">Student Name</label>
-          <input type="text" id="studentName" name="studentName" required>
-          <label for="studentLastName">Student Last Name</label>
-          <input type="text" id="studentLastName" name="studentLastName" required>
-          <label for="age">Age (in years):</label>
-          <input type="number" id="age" name="age" min="0.5" step="0.5" placeholder="e.g. 2.5" required>
-        </div>
-
-        <!-- Instrument -->
-        <label for="instrument">Choose Course / Instrument</label>
-       <select id="instrument" name="instrument" required>
-          <option value="">Select</option>
-          <option value="Jungle_music">Jungle Music (6m-3.5yrs)</option>
-          <option value="music_is_fun">Music is Fun (3.5yrs-4.5yrs)</option>
-          <option value="Piano_keys">Piano Keys (7yrs-10yrs)</option>
-          <option value="Junior_keys">Junior Keys (4.5yrs-7yrs)</option> 
-          <option value="Instruments">Instruments (6yrs+ Adults)</option>
-          <option value="Piano">Piano</option>
-          <option value="Guitar">Guitar</option>
-          <option value="Drums">Drums</option>
-          <option value="Violin">Violin</option>
-        </select>
-
-        <!-- Submit -->
-         <button id="submitBtn" type="submit">
-         <span id="btnText">Submit</span>
-         <span id="spinner" style="display:none;">⏳</span>
-        </button>
-        <p id="redirectMsg" style="display:none; margin-top:8px; font-size:14px;">
-           You’ll be redirected shortly to book your trial.
-         </p>
-      </form>
-    </div>
-    <div class="bottom-left-text">
-      <h1>Our Approach</h1>
-      <h2>At Forte School of Music, we believe in a holistic approach to music education. Our passionate teachers are dedicated to nurturing each individual's musical abilities while fostering a love for music that lasts a lifetime.
-  </section>
   <footer class="site-footer">
   <div class="footer-container">
     <!-- Logo -->
@@ -465,6 +394,7 @@
   });
 </script>
   <script src="js/leafletmap.js"></script>
+  <script src="js/bookingLinks.js"></script>
   <script src="js/opus1Handler.js"></script>
   <script src="js/form.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>

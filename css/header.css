@@ -193,39 +193,28 @@
 }
 
 /* ================= PURPLE BACKGROUND SECTION ================= */
-.background-section.purple {
+.background-section.purple { 
   position: relative;
   width: 100%;
   min-height: 700px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem 2rem 1rem;
-  box-sizing: border-box;
-  background-image: url('../assets/DSC_1932.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #6a0dad;
-  z-index: 1;
-  overflow: hidden;
-  gap: 2rem;
-}
+  justify-content: center;
+   /* NEW */ align-items: center;
+  /* NEW */ padding: 3rem 2rem 1rem;
+  box-sizing: border-box; background-image: url('../assets/DSC_1932.jpg');
+  background-position: center; background-repeat: no-repeat;
+  background-size: cover; background-color: #6a0dad;
+  z-index: 1; 
+  overflow: hidden; 
+  gap: 2rem; 
+  text-align: center; /* NEW */
+   }
 
 .purple .gradient-overlay {
   background: linear-gradient(15deg, rgba(106,13,173,0.97) 30%, rgba(106,13,173,0) 53%);
 }
 
-.purple .bottom-left-text {
-  font-size: 1.2rem !important;
-  max-width: 600px !important;
-  margin-top: 400px;
-  color: #fff;
-  font-family: 'roboto condensed', sans-serif;
-  line-height: 1.4;
-  z-index: 2;
-}
+.purple .bottom-left-text { font-size: 1.2rem !important; max-width: 600px !important; margin-top: 0; /* REMOVE the 400px offset */ color: #fff; font-family: 'roboto condensed', sans-serif; line-height: 1.4; z-index: 2; }
 
 /* ================= RESPONSIVE BOTTOM LEFT TEXT ================= */
 @media screen and (max-width: 768px), screen and (max-width: 480px) {
