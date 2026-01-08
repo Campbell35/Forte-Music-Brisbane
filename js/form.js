@@ -31,6 +31,7 @@ function toggleFields2() {
   if (value === 'myself') {
     parentFields2.style.display = 'none';
     studentFields2.style.display = 'block';
+    
   } else if (value === 'child') {
     parentFields2.style.display = 'block';
     studentFields2.style.display = 'block';
