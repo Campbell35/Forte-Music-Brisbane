@@ -40,6 +40,6 @@ function toggleFields2() {
   }
 }
 
-lessonFor2.addEventListener('change', toggleFields2);
+// lessonFor2.addEventListener('change', toggleFields2);
 
 
