@@ -21,10 +21,13 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
+  background: blue; /* moved from :hover */
 }
+
 .booking-btn:hover {
-  background: #5800b8;
+  opacity: 0.9; /* optional hover effect */
 }
+
 
 
 .form-container {
